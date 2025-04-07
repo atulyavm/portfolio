@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atulya Mishra | Portfolio</title>
+    <style>
+        :root {
+            --whipped-cream: #FAF7F2;
+            --raspberry: #C45B7E;
+            --lavender: #B5A6CA;
+            --mint: #A3C4BC;
+            --grape: #5D4E6D;
+            --tape-pink: #FFD6E0;
+            --tape-blue: #C4E1FF;
+            --shadow-color: rgba(0, 0, 0, 0.15);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Patrick+Hand&family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, var(--whipped-cream), var(--lavender));
+            color: var(--grape);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 3rem;
+            background: linear-gradient(-45deg, var(--grape), var(--raspberry));
+            border-radius: 0 0 40px 40px;
+            color: var(--whipped-cream);
+            position: relative;
+            box-shadow: 0 6px 20px var(--shadow-color);
+            border-bottom: 5px dashed var(--whipped-cream);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-container h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--whipped-cream);
+            text-shadow: 2px 2px 0 var(--raspberry);
+            letter-spacing: 1.2px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .polaroid-frame {
+            width: 150px;
+            height: 170px;
+            background: white;
+            padding: 15px 15px 35px 15px;
+            border-radius: 5px;
+            box-shadow: 0 6px 20px var(--shadow-color), inset 0 0 0 10px white, inset 0 0 0 7px var(--tape-pink);
+            transform: rotate(-3deg);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .polaroid-frame::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 25px;
+            background: var(--tape-blue);
+            opacity: 0.8;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+        }
+
+        .polaroid-frame:hover {
+            transform: rotate(0deg) scale(1.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 0 10px white, inset 0 0 0 7px var(--raspberry);
+        }
+
+        .polaroid-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(15%) contrast(110%) brightness(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        nav a {
+            color: var(--whipped-cream);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.4rem;
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            transition: all 0.4s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        nav a:hover {
+            background: var(--raspberry);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        section {
+            padding: 3rem;
+            max-width: 900px;
+            margin: 4rem auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px var(--shadow-color), 0 3px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: visible;
+            border: 2px solid white;
+        }
+
+        section::before, section::after {
+            content: '';
+            position: absolute;
+            height: 25px;
+            background: var(--tape-pink);
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        section::before {
+            top: -15px;
+            left: 30px;
+            right: 30px;
+            clip-path: polygon(0% 0%, 100% 0%, 95% 50%, 100% 100%, 0% 100%, 5% 50%);
+        }
+
+        section::after {
+            bottom: -15px;
+            right: 30px;
+            width: 120px;
+            background: var(--tape-blue);
+            clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--raspberry);
+            font-weight: 700;
+            font-family: 'Patrick Hand', cursive;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            border-radius: 12px;
+            box-shadow: 4px 4px 0 var(--lavender);
+            transform: rotate(-2deg);
+        }
+
+        p, ul {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--grape);
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            padding-left: 2rem;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        li::before {
+            content: '✨';
+            color: var(--raspberry);
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 1.1rem;
+            color: var(--grape);
+            background: white;
+            border-radius: 25px 25px 0 0;
+            margin-top: 4rem;
+            border-top: 4px dashed var(--raspberry);
+            position: relative;
+        }
+
+        /* footer::before {
+            content: '🌟';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+        } */
+
+        a {
+            color: var(--raspberry);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--grape);
+            text-decoration: underline wavy;
+            text-decoration-color: var(--mint);
+        }
+
+        .sticker {
+            position: absolute;
+            font-size: 2.5rem;
+            z-index: -1;
+            opacity: 0.25;
+        }
+
+        .sticker-1 {
+            top: 5%;
+            right: 10%;
+            transform: rotate(20deg);
+        }
+
+        .sticker-2 {
+            bottom: 15%;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+
+        .doodle {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border: 4px dashed var(--raspberry);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .doodle-1 {
+            top: 25%;
+            left: 5%;
+        }
+
+        .doodle-2 {
+            bottom: 5%;
+            right: 8%;
+            border-radius: 8px;
+            transform: rotate(30deg);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1.8rem;
+                gap: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 2rem;
+                margin: 3rem auto;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .polaroid-frame {
+                width: 120px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sticker sticker-1">🎨</div>
+    <div class="sticker sticker-2">🚀</div>
+    <div class="doodle doodle-1"></div>
+    <div class="doodle doodle-2"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-content">
+            <div class="profile-container">
+                <div class="polaroid-frame">
+                    <img src="atulya.jpg" alt="Atulya Mishra">
+                </div>
+                <h1>Atulya Mishra</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Atulya Mishra, a passionate first-year B.Tech AIML student at MITAOE. Driven by a curiosity for intelligent systems and data-driven solutions, I'm eager to explore the intersections of technology and human potential. My academic journey, marked by an SGPA of 8.67, fuels my commitment to continuous learning and innovation.
+            </p>
+            <p>
+                My vision is to contribute to building solutions that bridge the gap between human needs and machine intelligence. I thrive on collaborative projects and enjoy tackling interdisciplinary challenges that push the boundaries of creativity and critical thinking.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python, C, JavaScript</li>
+                <li><strong>Web Technologies:</strong> HTML5, CSS3, Responsive Design</li>
+                <li><strong>Databases:</strong> SQL, NoSQL (Basics)</li>
+                <!-- <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow (Basics)</li> -->
+                <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Jupyter Notebooks, Linux</li>
+                <li><strong>Soft Skills:</strong> Team Collaboration, Problem Solving, Time Management, Effective Communication</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <strong>Interactive Web Portfolio:</strong> Developed this very portfolio using HTML, CSS, and JavaScript to showcase my skills and projects.
+                </li>
+                <li>
+                    <strong>Python Automation Scripts:</strong> Created scripts to automate daily tasks, enhancing efficiency and productivity.
+                </li>
+                <li>
+                    <strong>Data Analysis Project:</strong> Analyzed a large dataset using Python and Pandas to extract meaningful insights and visualizations.
+                </li>
+                <!-- <li>
+                    <strong>Machine Learning Model (Prototype):</strong> Built a basic machine learning model for [Specific task] using Scikit-learn.
+                </li> -->
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>
+                <strong>Datathon 2025, MITAOE:</strong> Participated in a competitive hackathon focused on data science and AI. Collaborated with a team to develop and implement a machine learning model that analyzed large datasets for real-world applications.
+            </p>
+            <p>
+                <strong>Mini Projects:</strong> Designed and developed interactive webpages using HTML/CSS and utilized Python for automation to streamline personal workflows. These experiences honed my technical skills and fostered creative problem-solving.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                I'm always open to new opportunities and collaborations. Feel free to reach out to connect or discuss potential projects.
+            </p>
+            <p>
+                <span style="color: var(--raspberry);">📮</span> Email: <strong>atulya.mishra2628@gmail.com</strong><br/>
+                <span style="color: var(--raspberry);">📎</span> LinkedIn: <a href="https://www.linkedin.com/in/atulya-mishra-8b53b7351?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/atulyamishra</a><br/>
+                <span style="color: var(--raspberry);">🔗</span> GitHub: <a href="https://github.com/atulyavm" target="_blank">github.com/atulyamishra</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Atulya Mishra
+    </footer>
+</body>
+</html>
